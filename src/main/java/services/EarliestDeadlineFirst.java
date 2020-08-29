@@ -11,6 +11,7 @@ import java.util.List;
 
 import static data.JobSchedulerData.NUMBER_OF_THREADS;
 import static models.Job.priority;
+import static services.JobScheduler.scheduleThreads;
 
 public class EarliestDeadlineFirst extends Service {
 
@@ -30,12 +31,14 @@ public class EarliestDeadlineFirst extends Service {
                         .compare(priority(job2.getPriority()), priority(job1.getPriority()))
                         .compare(job1.getDuration(), job2.getDuration())
                         .result();
+
                 return 0;
             }
         });
 
 
-        return getJobScheduler().scheduleThreads(getJobList());
+        scheduleThreads(getJobList(),getResult());
+        return getResult();
     }
 
 }

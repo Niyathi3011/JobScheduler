@@ -1,5 +1,5 @@
 package factory;
 
-public enum Service {
+public enum ServiceType {
     SJF, FCFS, EDF, FPS
 }

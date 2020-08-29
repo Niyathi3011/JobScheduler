@@ -11,6 +11,7 @@ import java.util.List;
 
 import static data.JobSchedulerData.NUMBER_OF_THREADS;
 import static models.Job.priority;
+import static services.JobScheduler.scheduleThreads;
 
 public class ShortestJobFirst extends Service {
 
@@ -34,7 +35,8 @@ public class ShortestJobFirst extends Service {
         });
 
 
-        return getJobScheduler().scheduleThreads(getJobList());
+        scheduleThreads(getJobList(),getResult());
+        return getResult();
 
     }
 

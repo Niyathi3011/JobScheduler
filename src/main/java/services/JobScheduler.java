@@ -8,14 +8,7 @@ import java.util.List;
 import java.util.PriorityQueue;
 
 public class JobScheduler {
-
-    private final Result result;
-
-    public JobScheduler() {
-        result = new Result();
-    }
-
-    public Result scheduleThreads(List<Job> jobList) {
+    public static void scheduleThreads(List<Job> jobList, Result result) {
         PriorityQueue<Thread> pq = result.getPriorityQueue();
         for (Job job : jobList) {
             Thread thread = pq.peek();
@@ -25,7 +18,6 @@ public class JobScheduler {
             pq.add(thread);
 
         }
-        return result;
     }
 
 }
