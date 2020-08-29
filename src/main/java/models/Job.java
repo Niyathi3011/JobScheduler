@@ -21,4 +21,20 @@ public class Job {
         ROOT, ADMIN, USER
     }
 
+    public static int getUserPriority(User user){
+        switch(user){
+            case ROOT: return 3;
+            case ADMIN:return 2;
+            case USER:return 1;
+        }
+        return 0;
+    }
+    public static int priority(Priority priority){
+        switch(priority){
+            case P0:return 3;
+            case P1:return 2;
+            case P2:return 1;
+        }
+        return 0;
+    }
 }

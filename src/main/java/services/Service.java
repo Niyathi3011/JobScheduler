@@ -20,5 +20,9 @@ public abstract class Service {
         return jobList;
     }
 
+    public Result getResult() {
+        return result;
+    }
+
     abstract public Result execute();
 }

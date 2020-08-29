@@ -10,10 +10,6 @@ import java.util.Map;
 
 public class ServiceFactory {
 
-    public enum Service {
-        SJF,FCFS,EDF,FPS
-    };
-
     private final List<Job>jobList;
     private final Map<Service, Result> resultMap;
 
@@ -26,6 +22,7 @@ public class ServiceFactory {
         return resultMap;
     }
     Service service[]=Service.values();
+
 
 
 }

@@ -14,6 +14,10 @@ public class JobSchedulerData {
     public static List<Job> jobList;
     private static final int NUMBER_OF_FIELDS = 5;
 
+    public JobSchedulerData() {
+        jobList = new ArrayList<>();
+    }
+
     public static List<Job> getInputData() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the total number of Thraeds");

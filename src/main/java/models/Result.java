@@ -1,13 +1,28 @@
 package models;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Result {
 
-    private final Map<String,Thread>threadMap;
+    private final List<Thread> threadList;
+
+    public List<Thread> getThreadList() {
+        return threadList;
+    }
 
     public Result() {
-        threadMap = new HashMap<>();
+        this.threadList=new ArrayList<>();
     }
+
+    public void addThread(Thread thread){
+        this.threadList.add(thread);
+    }
+
+    public Thread getThread(int i){
+        return this.threadList.get(i);
+    }
+
 }
