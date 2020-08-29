@@ -3,6 +3,7 @@ package services;
 import models.Job;
 import models.Result;
 import models.Thread;
+
 import java.util.List;
 import java.util.PriorityQueue;
 
@@ -24,7 +25,7 @@ public class JobScheduler {
             pq.add(thread);
 
         }
-          return result;
+        return result;
     }
 
 }

@@ -6,24 +6,25 @@ import lombok.ToString;
 
 import java.util.ArrayList;
 import java.util.List;
+
 @Getter
 @AllArgsConstructor
 @ToString
 public class Thread {
 
-    private final List<String>scheduledJobList;
+    private final List<String> scheduledJobList;
     private final int id;
     private int scheduledTime;
 
     public Thread(int id) {
         this.id = id;
-        this.scheduledJobList=new ArrayList<>();
-        scheduledTime=0;
+        this.scheduledJobList = new ArrayList<>();
+        scheduledTime = 0;
     }
 
-    public void addJob(Job job){
+    public void addJob(Job job) {
         this.scheduledJobList.add(job.getName());
-        this.scheduledTime+=job.getDuration();
+        this.scheduledTime += job.getDuration();
     }
 
 

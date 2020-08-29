@@ -26,9 +26,9 @@ public class EarliestDeadlineFirst extends Service {
             public int compare(Job job1, Job job2) {
 
                 ComparisonChain.start()
-                        .compare(job1.getDeadline(),job2.getDeadline())
-                        .compare(priority(job2.getPriority()),priority(job1.getPriority()))
-                        .compare(job1.getDuration(),job2.getDuration())
+                        .compare(job1.getDeadline(), job2.getDeadline())
+                        .compare(priority(job2.getPriority()), priority(job1.getPriority()))
+                        .compare(job1.getDuration(), job2.getDuration())
                         .result();
                 return 0;
             }

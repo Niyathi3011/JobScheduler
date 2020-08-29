@@ -27,9 +27,9 @@ public class FixedPriorityScheduling extends Service {
             @Override
             public int compare(Job job1, Job job2) {
                 ComparisonChain.start()
-                        .compare(priority(job2.getPriority()),priority(job1.getPriority()))
-                        .compare(getUserPriority(job2.getUser()),getUserPriority(job1.getUser()))
-                        .compare(job2.getDuration(),job1.getDuration())
+                        .compare(priority(job2.getPriority()), priority(job1.getPriority()))
+                        .compare(getUserPriority(job2.getUser()), getUserPriority(job1.getUser()))
+                        .compare(job2.getDuration(), job1.getDuration())
                         .result();
                 return 0;
             }

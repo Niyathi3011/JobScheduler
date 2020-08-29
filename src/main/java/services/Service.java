@@ -12,9 +12,10 @@ public abstract class Service {
 
     public Service(List<Job> jobList) {
         this.jobList = jobList;
-        this.jobScheduler=new JobScheduler();
+        this.jobScheduler = new JobScheduler();
 
     }
+
     public List<Job> getJobList() {
         return jobList;
     }
