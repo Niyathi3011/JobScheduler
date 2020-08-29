@@ -8,20 +8,19 @@ import java.util.List;
 public abstract class Service {
 
     private final List<Job> jobList;
-    private final Result result;
+    private final JobScheduler jobScheduler;
 
     public Service(List<Job> jobList) {
         this.jobList = jobList;
-        this.result=new Result();
+        this.jobScheduler=new JobScheduler();
 
     }
-
     public List<Job> getJobList() {
         return jobList;
     }
 
-    public Result getResult() {
-        return result;
+    public JobScheduler getJobScheduler() {
+        return jobScheduler;
     }
 
     abstract public Result execute();

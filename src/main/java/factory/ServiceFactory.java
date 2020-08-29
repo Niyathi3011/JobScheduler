@@ -21,7 +21,10 @@ public class ServiceFactory {
     public Map<Service, Result> getResultMap() {
         return resultMap;
     }
-    Service service[]=Service.values();
+
+    for(Service service: Service.values()){
+
+    }
 
 
 

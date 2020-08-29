@@ -1,28 +1,18 @@
 package models;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import lombok.ToString;
 
+import java.util.*;
+@ToString
 public class Result {
 
-    private final List<Thread> threadList;
-
-    public List<Thread> getThreadList() {
-        return threadList;
-    }
+    private final PriorityQueue<Thread>priorityQueue;
 
     public Result() {
-        this.threadList=new ArrayList<>();
+        priorityQueue = new PriorityQueue<Thread >(new MyComparator());
     }
 
-    public void addThread(Thread thread){
-        this.threadList.add(thread);
+    public PriorityQueue<Thread> getPriorityQueue() {
+        return priorityQueue;
     }
-
-    public Thread getThread(int i){
-        return this.threadList.get(i);
-    }
-
 }

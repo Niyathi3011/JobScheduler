@@ -1,6 +1,7 @@
 package services;
 
 import com.google.common.collect.ComparisonChain;
+import data.JobSchedulerData;
 import models.Job;
 import models.Result;
 
@@ -34,26 +35,7 @@ public class EarliestDeadlineFirst extends Service {
         });
 
 
-        return null;
+        return getJobScheduler().scheduleThreads(getJobList());
     }
-
-    public Result scheduleThreads(List<Job> jobList) {
-
-        int i=1;
-        for (Job job : jobList) {
-            while (i <= NUMBER_OF_THREADS) {
-                if(job.getDeadline()-getResult().getThread(i).getScheduledTime()>=job.getDuration()) {
-                    getResult().getThread(i).addJob(job);
-                    i++;
-                    break;
-                }
-                i++;
-            }
-        }
-
-        return getResult();
-    }
-
-
 
 }
