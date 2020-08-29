@@ -13,12 +13,16 @@ public class ServiceFactory {
         this.jobList = jobList;
     }
 
-    public Service getService(ServiceType service){
-        switch (service){
-            case SJF: return new ShortestJobFirst(jobList);
-            case EDF:return new EarliestDeadlineFirst(jobList);
-            case FPS:return new FixedPriorityScheduling(jobList);
-            case FCFS:return new FirstComeFirstServe(jobList);
+    public Service getService(ServiceType service) {
+        switch (service) {
+            case SJF:
+                return new ShortestJobFirst(jobList);
+            case EDF:
+                return new EarliestDeadlineFirst(jobList);
+            case FPS:
+                return new FixedPriorityScheduling(jobList);
+            case FCFS:
+                return new FirstComeFirstServe(jobList);
         }
 
         return null;

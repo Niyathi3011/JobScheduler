@@ -18,7 +18,7 @@ public class FirstComeFirstServe extends Service {
     @Override
     public Result execute() {
 
-        scheduleThreads(getJobList(),getResult());
+        scheduleThreads(getJobList(), getResult());
         return getResult();
     }
 

@@ -29,7 +29,7 @@ public class System {
         for (ServiceType serviceType : ServiceType.values()) {
 
             Service service = serviceFactory.getService(serviceType);
-            resultMap.put(serviceType,service.execute());
+            resultMap.put(serviceType, service.execute());
 
         }
     }

@@ -35,7 +35,7 @@ public class ShortestJobFirst extends Service {
         });
 
 
-        scheduleThreads(getJobList(),getResult());
+        scheduleThreads(getJobList(), getResult());
         return getResult();
 
     }

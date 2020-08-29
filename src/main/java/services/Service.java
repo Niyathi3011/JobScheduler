@@ -12,13 +12,17 @@ public abstract class Service {
     public Result getResult() {
         return result;
     }
+
     private final Result result;
+
     public Service(List<Job> jobList) {
         this.jobList = jobList;
         result = new Result();
     }
+
     public List<Job> getJobList() {
         return jobList;
     }
+
     abstract public Result execute();
 }

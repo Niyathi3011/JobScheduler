@@ -3,9 +3,11 @@ package services;
 import com.google.common.collect.ComparisonChain;
 import models.Job;
 import models.Result;
+
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+
 import static models.Job.getUserPriority;
 import static models.Job.priority;
 import static services.JobScheduler.scheduleThreads;
@@ -31,7 +33,7 @@ public class FixedPriorityScheduling extends Service {
             }
         });
 
-        scheduleThreads(getJobList(),getResult());
+        scheduleThreads(getJobList(), getResult());
         return getResult();
     }
 }

@@ -37,7 +37,7 @@ public class EarliestDeadlineFirst extends Service {
         });
 
 
-        scheduleThreads(getJobList(),getResult());
+        scheduleThreads(getJobList(), getResult());
         return getResult();
     }
 
