@@ -3,10 +3,9 @@ import factory.Service;
 import factory.ServiceFactory;
 import models.Job;
 import models.Result;
-
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
+
 
 public class JobSchedulerApp {
 
@@ -20,10 +19,10 @@ public class JobSchedulerApp {
 
     public static void message(Map<Service, Result>result){
 
-        for(Map.Entry map: result.entrySet()){
-            System.out.println(map.getKey());
-            System.out.println(map.getValue().toString());
-        }
+        result.forEach((key, value) -> {
+            System.out.println(key);
+            System.out.println(value.toString());
+        });
 
     }
 }
