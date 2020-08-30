@@ -1,13 +1,19 @@
 package models;
 
-import java.util.HashMap;
-import java.util.Map;
+import lombok.ToString;
 
+import java.util.*;
+
+@ToString
 public class Result {
 
-    private final Map<String,Thread>threadMap;
+    private final PriorityQueue<Thread> priorityQueue;
 
     public Result() {
-        threadMap = new HashMap<>();
+        priorityQueue = new PriorityQueue<Thread>(new MyComparator());
+    }
+
+    public PriorityQueue<Thread> getPriorityQueue() {
+        return priorityQueue;
     }
 }

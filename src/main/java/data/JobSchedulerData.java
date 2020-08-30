@@ -11,12 +11,16 @@ import static java.lang.Integer.parseInt;
 public class JobSchedulerData {
 
     public static int NUMBER_OF_THREADS;
-    public static List<Job> jobList;
+    private final List<Job> jobList;
     private static final int NUMBER_OF_FIELDS = 5;
 
-    public static List<Job> getInputData() {
+    public JobSchedulerData() {
+        jobList = new ArrayList<>();
+    }
+
+    public List<Job> getInputData() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the total number of Thraeds");
+        System.out.println("Enter the total number of Threads");
         NUMBER_OF_THREADS = sc.nextInt();
         String s = "Yes";
         while (s.matches("Yes")) {

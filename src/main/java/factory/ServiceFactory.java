@@ -1,31 +1,30 @@
 package factory;
 
 import models.Job;
-import models.Result;
+import services.*;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class ServiceFactory {
 
-    public enum Service {
-        SJF,FCFS,EDF,FPS
-    };
-
-    private final List<Job>jobList;
-    private final Map<Service, Result> resultMap;
+    private final List<Job> jobList;
 
     public ServiceFactory(List<Job> jobList) {
         this.jobList = jobList;
-        this.resultMap=new HashMap<>();
     }
 
-    public Map<Service, Result> getResultMap() {
-        return resultMap;
+    public Service getService(ServiceType service) {
+        switch (service) {
+            case SJF:
+                return new ShortestJobFirst(jobList);
+            case EDF:
+                return new EarliestDeadlineFirst(jobList);
+            case FPS:
+                return new FixedPriorityScheduling(jobList);
+            case FCFS:
+                return new FirstComeFirstServe(jobList);
+        }
+
+        return null;
     }
-    Service service[]=Service.values();
-
-
 }
